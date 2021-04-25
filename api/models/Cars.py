@@ -37,11 +37,13 @@ class Car(db.Model):
 
     def to_json(self):
         return {
+            "id": self.id,
             "user_id": self.user_id,
             "make": self.make,
             "model": self.model,
             "colour": self.colour,
             "year": self.year,
+            "description": self.description,
             "transmission": self.transmission,
             "car_type": self.car_type,
             "price": self.price,
