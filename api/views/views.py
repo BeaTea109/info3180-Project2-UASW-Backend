@@ -233,7 +233,7 @@ def getUserById(current_user,user_id):
             )
         else:
             return make_response(
-                "Car not foud",
+                "User not foud",
                 403,
             )
 
