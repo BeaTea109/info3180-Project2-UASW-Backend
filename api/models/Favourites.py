@@ -13,4 +13,6 @@ class Favourite(db.Model):
     car_id = db.Column(db.Integer, db.ForeignKey("car.id"))
     user_id = db.Column(db.Integer,db.ForeignKey("user.id"))
     
-
+    def __init__(self, user_id, car_id ):
+            self.car_id = car_id
+            self.user_id = user_id

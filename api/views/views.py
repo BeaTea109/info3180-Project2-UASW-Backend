@@ -185,7 +185,7 @@ def addFavouriteCarById(current_user, car_id):
         print(favourite,file=sys.stderr)
         if favourite is None:  
             try:
-
+                favourite= Favourite(user_id=current_user.get_id(), car_id=car_id)
                 db.session.add(favourite)
                 db.session.commit()
                 return make_response(
@@ -193,7 +193,7 @@ def addFavouriteCarById(current_user, car_id):
                         201,
                     )
             except:
-                make_response(
+               return make_response(
                     "Car or User not foud",
                     403,
                 )
