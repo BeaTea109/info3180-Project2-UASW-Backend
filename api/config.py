@@ -4,7 +4,7 @@ class Config(object):
     """Base Config Object"""
     DEBUG = False
     SECRET_KEY = 'Som3$ec5etK*y'
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'posgresql://xsdieiszkzggiy:3642b3efac62c3395d4d7ad9134895617db0fd25e205e557cb2f1fa011932c2c@ec2-34-225-103-117.compute-1.amazonaws.com:5432/dfesuqo3805m8u'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'postgresql://xsdieiszkzggiy:3642b3efac62c3395d4d7ad9134895617db0fd25e205e557cb2f1fa011932c2c@ec2-34-225-103-117.compute-1.amazonaws.com:5432/dfesuqo3805m8u'
     SQLALCHEMY_TRACK_MODIFICATIONS = False # This is just here to suppress a warning from SQLAlchemy as it will soon be removed
 
 class DevelopmentConfig(Config):
