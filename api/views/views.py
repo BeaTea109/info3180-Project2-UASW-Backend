@@ -117,7 +117,6 @@ def signup():
 
 
 @app.route("/api/cars", methods=["POST", "GET"])
-@login_required
 @token_required
 def getCars(current_user):
     print(current_user, file=sys.stderr)
@@ -162,7 +161,6 @@ def getCars(current_user):
 
 
 @app.route("/api/cars/<car_id>", methods=["GET"])
-@login_required
 @token_required
 def getCarById(current_user, car_id):
     if request.method == "GET":
@@ -180,7 +178,6 @@ def getCarById(current_user, car_id):
 
 
 @app.route("/api/cars/<car_id>/favourite", methods=["POST"])
-@login_required
 @token_required
 def addFavouriteCarById(current_user, car_id):
     if request.method == "POST":
@@ -207,7 +204,6 @@ def addFavouriteCarById(current_user, car_id):
                     )
 
 @app.route("/api/search", methods=["GET"])
-@login_required
 @token_required
 def search(current_user):
     if request.method == "GET":
@@ -221,7 +217,6 @@ def search(current_user):
         )
 
 @app.route("/api/users/<user_id>", methods=["GET"])
-@login_required
 @token_required
 def getUserById(current_user,user_id):
     if request.method == "GET":
@@ -239,7 +234,6 @@ def getUserById(current_user,user_id):
 
 
 @app.route("/api/users/<user_id>/favourites", methods=["GET"])
-@login_required
 @token_required
 def getCarsByUserFavourite(current_user,user_id):
     if request.method == "GET":

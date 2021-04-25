@@ -12,10 +12,12 @@ def token_required(f):
     @wraps(f)
     def decorated(*args, **kwargs):
         token = None
+        
         # jwt is passed in the request header
 
         if "Authorization" in request.headers:
             token = request.headers["Authorization"].split(" ")[1]
+            print("Here", file=sys.stderr)
         # return 401 if token is not passed
         if not token:
             return jsonify({"message": "Token is missing !!"}), 401
